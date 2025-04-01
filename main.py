@@ -17,7 +17,6 @@ class App(tk.Tk):
             import pywinstyles
             self.iconbitmap("./Assets/repair-toolkit.ico")
             pywinstyles.change_header_color(self,"#2c1c1c")
-            apply_theme_to_titlebar(self)
         
 
 class moduleContainer(ttk.Frame):

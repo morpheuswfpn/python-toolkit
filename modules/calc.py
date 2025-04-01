@@ -16,7 +16,6 @@ if platform.system() == "Windows":
     import pywinstyles
     root.iconbitmap("./Assets/calculator.ico")
     pywinstyles.change_header_color(root,"#2c1c1c")
-    apply_theme_to_titlebar(root)
 
 nametofont("SunValleyBodyFont").configure(size=20)
 

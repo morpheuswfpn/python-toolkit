@@ -6,11 +6,7 @@ import platform
 from shutil import move
 from tkinter.font import nametofont
 
-if platform.system() == "Windows":
-	import pywinstyles
-	root.iconbitmap("./Assets/file.ico")
-	pywinstyles.change_header_color(root, "#2c1c1c")
-	apply_theme_to_titlebar(root)
+
 
 programming = [
 	"py", "c", "pyc", "lua", "java", "asm", "go", "zig", 
@@ -54,6 +50,10 @@ def GUI():
 	source_label.pack(pady=5)
 	source_entry = ttk.Entry(root, textvariable=source)
 	source_entry.pack(pady=5)
+	if platform.system() == "Windows":
+		import pywinstyles
+		root.iconbitmap("./Assets/file.ico")
+		pywinstyles.change_header_color(root, "#2c1c1c")
 
 
 	destination_label = ttk.Label(root, text="Absolute Destination Path", font=("Segoe UI", 10))
