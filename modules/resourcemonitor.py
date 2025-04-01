@@ -8,14 +8,14 @@ nfont = ("CaskaydiaMono Nerd Font Mono", 14)
 
 root = tk.Tk()
 style = ttk.Style()
-root.geometry("510x150")
+root.geometry("515x140")
 root.tk.call("tk", "scaling", 1.0)
 root.title("Resource Monitor")
-
+root.resizable(False,False)
 if platform.system() == "Windows":
   import pywinstyles
   root.iconbitmap("./Assets/analytics.ico")
-  pywinstyles.change_header_color(root, "#2c1c1c")
+  pywinstyles.change_header_color(root, "#1c1c1c")
 
 # cpu
 

@@ -16,7 +16,7 @@ class App(tk.Tk):
         if platform.system() == "Windows":
             import pywinstyles
             self.iconbitmap("./Assets/repair-toolkit.ico")
-            pywinstyles.change_header_color(self,"#2c1c1c")
+            pywinstyles.change_header_color(self,"#1c1c1c")
         
 
 class moduleContainer(ttk.Frame):
@@ -42,15 +42,15 @@ class moduleContainer(ttk.Frame):
 
         # Left button that expands
         self.button_rmonitor = ttk.Button(button_frame, text="Resource Monitor", command=start_rmonitor)
-        self.button_rmonitor.pack(side="left", expand=True, padx=20)
+        self.button_rmonitor.pack(side="left", expand=True, padx=10)
         
         # Middle button that stays fixed in the center
         self.button_filesorter = ttk.Button(button_frame, text="Filesorter", command=start_filesorter)
-        self.button_filesorter.pack(side="left",expand=True, padx=20)
+        self.button_filesorter.pack(side="left",expand=True, padx=80)
         
         # Right button that expands
         self.button_calc = ttk.Button(button_frame, text="Calculator", command=start_calc)
-        self.button_calc.pack(side="left", expand=True, padx=20)
+        self.button_calc.pack(side="left", expand=True, padx=10)
 
         # Make the entire frame expand to fill available space
         self.pack(fill="both", expand=True)

@@ -6,7 +6,7 @@ from tkinter.font import nametofont
 
 root = tk.Tk()
 style = ttk.Style()
-root.geometry("440x640")
+root.geometry("457x640")
 root.tk.call("tk", "scaling", 1.0)
 root.title("Calculator")
 root.resizable(False,False)
@@ -15,7 +15,7 @@ sv_ttk.set_theme("dark")
 if platform.system() == "Windows":
     import pywinstyles
     root.iconbitmap("./Assets/calculator.ico")
-    pywinstyles.change_header_color(root,"#2c1c1c")
+    pywinstyles.change_header_color(root,"#1c1c1c")
 
 nametofont("SunValleyBodyFont").configure(size=20)
 

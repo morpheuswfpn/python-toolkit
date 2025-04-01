@@ -53,7 +53,7 @@ def GUI():
 	if platform.system() == "Windows":
 		import pywinstyles
 		root.iconbitmap("./Assets/file.ico")
-		pywinstyles.change_header_color(root, "#2c1c1c")
+		pywinstyles.change_header_color(root, "#1c1c1c")
 
 
 	destination_label = ttk.Label(root, text="Absolute Destination Path", font=("Segoe UI", 10))
