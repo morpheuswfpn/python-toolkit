@@ -12,7 +12,6 @@ class App(tk.Tk):
         self.title("Toolkit Lauchner "+TOOLKITVERSION)
         self.geometry("1120x630") # 16:9@70
         self.resizable(False, False)
-        self.iconbitmap("./Assets/repair-toolkit.ico")
         
 class moduleContainer(ttk.Frame):
     def __init__(self, container):

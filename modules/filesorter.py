@@ -43,10 +43,8 @@ def GUI():
 	root.title("File Sorter")
 	source = tk.StringVar()
 	destination = tk.StringVar()
-	root.iconbitmap("./Assets/file.ico")
 	source_label = ttk.Label(root, text="Absolute Source Path", font=("Segoe UI", 10))
 	source_label.pack(pady=5)
-	apply_theme_to_titlebar(root)
 	source_entry = ttk.Entry(root, textvariable=source)
 	source_entry.pack(pady=5)
 
