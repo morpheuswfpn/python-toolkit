@@ -26,9 +26,9 @@ class moduleContainer(ttk.Frame):
         self.button.pack()
 
         def start_calc():
-            subprocess.Popen(["python", ".modules/calc.py"])
+            subprocess.Popen(["python", "./modules/calc.py"])
         self.button = ttk.Button(self, text="Calculator", command=start_calc)
-        self.button.pack
+        self.button.pack()
         
         self.title = ttk.Label(self, text="Dashboard", font=("Segoe UI",40))
         self.title.pack()  

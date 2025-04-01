@@ -2,7 +2,6 @@ from tkinter import ttk
 import tkinter as tk
 import sv_ttk
 import psutil
-import pywinstyles, sys
 
 nfont = ("CaskaydiaMono Nerd Font Mono", 14)
 
@@ -106,13 +105,5 @@ def main():
   bat_funcs()
   root.mainloop()
   
-
-def apply_theme_to_titlebar(root):
-    version = sys.getwindowsversion()
-    if version.major == 10:
-        pywinstyles.change_header_color(root,"#1c1c1c")
-
-apply_theme_to_titlebar(root)
-
 if __name__ == "__main__":
   main()
