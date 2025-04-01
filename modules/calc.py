@@ -1,6 +1,7 @@
 from tkinter import ttk
 import tkinter as tk
 import sv_ttk
+import platform
 from tkinter.font import nametofont
 
 root = tk.Tk()
@@ -10,6 +11,12 @@ root.tk.call("tk", "scaling", 1.0)
 root.title("Calculator")
 root.resizable(False,False)
 sv_ttk.set_theme("dark")
+
+if platform.system() == "Windows":
+    import pywinstyles
+    root.iconbitmap("./Assets/calculator.ico")
+    pywinstyles.change_header_color(root,"#2c1c1c")
+    apply_theme_to_titlebar(root)
 
 nametofont("SunValleyBodyFont").configure(size=20)
 

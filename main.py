@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import sv_ttk
 import subprocess
+import platform
 from tkinter.font import nametofont
 
 TOOLKITVERSION = "v.0.12"
@@ -11,6 +12,12 @@ class App(tk.Tk):
         self.title("Toolkit Lauchner "+TOOLKITVERSION)
         self.geometry("960x540") # 16:9@60
         self.resizable(False, False)
+
+        if platform.system() == "Windows":
+            import pywinstyles
+            self.iconbitmap("./Assets/repair-toolkit.ico")
+            pywinstyles.change_header_color(self,"#2c1c1c")
+            apply_theme_to_titlebar(self)
         
 
 class moduleContainer(ttk.Frame):
@@ -32,7 +39,7 @@ class moduleContainer(ttk.Frame):
 
         # Frame to hold the buttons and distribute them horizontally
         button_frame = ttk.Frame(self)
-        button_frame.pack(side="top", fill="x", pady=20)
+        button_frame.pack(side="top", pady=20)
 
         # Left button that expands
         self.button_rmonitor = ttk.Button(button_frame, text="Resource Monitor", command=start_rmonitor)
@@ -40,7 +47,7 @@ class moduleContainer(ttk.Frame):
         
         # Middle button that stays fixed in the center
         self.button_filesorter = ttk.Button(button_frame, text="Filesorter", command=start_filesorter)
-        self.button_filesorter.pack(side="left", padx=20)
+        self.button_filesorter.pack(side="left",expand=True, padx=20)
         
         # Right button that expands
         self.button_calc = ttk.Button(button_frame, text="Calculator", command=start_calc)
@@ -50,7 +57,8 @@ class moduleContainer(ttk.Frame):
         self.pack(fill="both", expand=True)
 
         # Center the middle button with "place" geometry manager
-        button_frame.place(relx=0.5, rely=0.5, anchor="center")
+        button_frame.place(relx=0.45, rely=0.3, anchor="n")
+        
 if __name__ == "__main__":
     app = App()
     moduleContainer(app)

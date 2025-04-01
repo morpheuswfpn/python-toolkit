@@ -2,6 +2,7 @@ from tkinter import ttk
 import tkinter as tk
 import sv_ttk
 import psutil
+import platform
 
 nfont = ("CaskaydiaMono Nerd Font Mono", 14)
 
@@ -10,6 +11,12 @@ style = ttk.Style()
 root.geometry("510x150")
 root.tk.call("tk", "scaling", 1.0)
 root.title("Resource Monitor")
+
+if platform.system() == "Windows":
+  import pywinstyles
+  root.iconbitmap("./Assets/analytics.ico")
+  pywinstyles.change_header_color(root, "#2c1c1c")
+  apply_theme_to_titlebar(root)
 
 # cpu
 
@@ -101,6 +108,5 @@ def main():
   disk_funcs()
   bat_funcs()
   root.mainloop()
-  
 if __name__ == "__main__":
   main()
