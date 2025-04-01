@@ -3,7 +3,7 @@ from tkinter import ttk
 import sv_ttk
 import subprocess
 
-TOOLKITVERSION = "v.0.6"
+TOOLKITVERSION = "v.0.8"
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
