@@ -86,7 +86,7 @@ def updatestrengthlabel(event):
     
     pwstrengthlabel.config(text=f"{selected_strength}")       
                         
-generated_passwordlabel = ttk.Label(root,text="")
+generated_passwordlabel = ttk.Label(root,text="", cursor="hand2")
 def generate():
     char_pool = []
     
@@ -111,6 +111,10 @@ def generate():
     
     generated_passwordlabel.configure(text=password)
     
+def copy_text(event):
+    root.clipboard_clear()
+    root.clipboard_append(generated_passwordlabel.cget("text"))
+    root.update()  
     
 # config
 useletterscheck = ttk.Checkbutton(root, text="Use Letters", variable=uselettersbool)
@@ -145,7 +149,7 @@ pwstrengthlabel.grid(row=1, column=3, ipadx=0, padx=20, ipady=0, pady=0, sticky=
 submit.grid(row=3, column=2)
 
 generated_passwordlabel.grid(row=4, column=0, columnspan=4, padx=10,ipadx=0, pady=20,ipady=0, sticky="w")
-
+generated_passwordlabel.bind("<Button-1>", copy_text)
 def main():
     root.mainloop()
 
