@@ -2,9 +2,15 @@ import tkinter as tk
 from tkinter import ttk
 import sv_ttk
 import os
+import platform
 from shutil import move
-import pywinstyles, sys
 from tkinter.font import nametofont
+
+if platform.system() == "Windows":
+	import pywinstyles
+	root.iconbitmap("./Assets/file.ico")
+	pywinstyles.change_header_color(root, "#2c1c1c")
+	apply_theme_to_titlebar(root)
 
 programming = [
 	"py", "c", "pyc", "lua", "java", "asm", "go", "zig", 
@@ -44,12 +50,11 @@ def GUI():
 	root.title("File Sorter")
 	source = tk.StringVar()
 	destination = tk.StringVar()
-	root.iconbitmap("./Assets/file.ico")
 	source_label = ttk.Label(root, text="Absolute Source Path", font=("Segoe UI", 10))
 	source_label.pack(pady=5)
-	apply_theme_to_titlebar(root)
 	source_entry = ttk.Entry(root, textvariable=source)
 	source_entry.pack(pady=5)
+
 
 	destination_label = ttk.Label(root, text="Absolute Destination Path", font=("Segoe UI", 10))
 	destination_label.pack(pady=5)
@@ -70,11 +75,6 @@ def GUI():
 
 def does_dir_exist(dir):
 	return os.path.isdir(dir)
-
-def apply_theme_to_titlebar(root):
-    version = sys.getwindowsversion()
-    if version.major == 10:
-        pywinstyles.change_header_color(root,"#1c1c1c")
 
 def main():
 	moved_count = 0
