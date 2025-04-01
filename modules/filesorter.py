@@ -3,7 +3,6 @@ from tkinter import ttk
 import sv_ttk
 import os
 from shutil import move
-import pywinstyles, sys
 from tkinter.font import nametofont
 
 programming = [
@@ -70,11 +69,6 @@ def GUI():
 
 def does_dir_exist(dir):
 	return os.path.isdir(dir)
-
-def apply_theme_to_titlebar(root):
-    version = sys.getwindowsversion()
-    if version.major == 10:
-        pywinstyles.change_header_color(root,"#1c1c1c")
 
 def main():
 	moved_count = 0

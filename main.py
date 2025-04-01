@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 import sv_ttk
 import subprocess
-import pywinstyles, sys
 from tkinter.font import nametofont
 
 
@@ -14,13 +13,6 @@ class App(tk.Tk):
         self.geometry("1120x630") # 16:9@70
         self.resizable(False, False)
         self.iconbitmap("./Assets/repair-toolkit.ico")
-        
-        def apply_theme_to_titlebar(self):
-            version = sys.getwindowsversion()
-            if version.major == 10:
-                pywinstyles.change_header_color(self,"#1c1c1c")
-            
-        apply_theme_to_titlebar(self)
         
 class moduleContainer(ttk.Frame):
     def __init__(self, container):
