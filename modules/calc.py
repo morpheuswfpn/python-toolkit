@@ -1,7 +1,6 @@
 from tkinter import ttk
 import tkinter as tk
 import sv_ttk
-import pywinstyles, sys
 from tkinter.font import nametofont
 
 root = tk.Tk()
@@ -84,13 +83,6 @@ buttonp.grid(row=4, column=3, ipadx=38,padx=1, ipady=45)
 
 def main():
     root.mainloop()
-
-def apply_theme_to_titlebar(root):
-    version = sys.getwindowsversion()
-    if version.major == 10:
-        pywinstyles.change_header_color(root,"#1c1c1c")
-
-apply_theme_to_titlebar(root)
 
 if __name__ == "__main__":
   main()
