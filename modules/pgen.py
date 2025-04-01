@@ -5,12 +5,10 @@ import random
 import platform
 
 root = tk.Tk()
-style = ttk.Style()
 root.geometry("900x480")
 root.tk.call("tk", "scaling", 1.0)
 root.title("Password Generator")
 root.resizable(False,False)
-sv_ttk.set_theme("dark")
 
 if platform.system() == "Windows":
     import pywinstyles
