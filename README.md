@@ -1,15 +1,16 @@
-# Info
-Simple GUI Program written by me and MIBB as part of a school project, it consists of the main GUI and what we call modules. These modules are other GUI programs that get launched from the main one.
+# Information
+This is a simple python GUI program that has three modules, the modules are also GUI's. It was made by MIBB and me as part of a school project.
 
-Currently there are following modules:
-- Filesorter
-- Resource Monitor
+The three modules are:
 - Calculator
+- File-sorter
+- Resource Monitor
 
-The GUI's use the SunValley ttk theme.
+The GUI framework we used is Tkinter and themed tkinter, additionally we used the SunValley ttk theme.
+
+**Documentation** can be found in `/documentation`.
 # Installation Linux
 On Linux distributions you will quite likely get the error message that packages should not be installed globally and that is where the virtual environment comes into play. Refer to [this](documentation/venv.md) guide and then do the normal installation.
-
 # Installation (windows & mac maybe)
 ## Install dependencies
 ```sh

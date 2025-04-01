@@ -95,6 +95,7 @@ def does_dir_exist(dir):
 	return os.path.isdir(dir)
 ```
 - Little function that returns true or false which is used to check if a directory exists
+
 ```python
 def main():
 	moved_count = 0
