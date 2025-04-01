@@ -5,7 +5,7 @@ import subprocess
 import platform
 from tkinter.font import nametofont
 
-TOOLKITVERSION = "v.0.12"
+TOOLKITVERSION = "v.0.13"
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -32,6 +32,9 @@ class moduleContainer(ttk.Frame):
         def start_calc():
             subprocess.Popen(["python", "./modules/calc.py"])
         
+        def start_pgen():
+            subprocess.Popen(["python", "./modules/pgen.py"])
+        
         # Title label, centered at the top
         self.title = ttk.Label(self, text="Dashboard", font=("Segoe UI", 40))
         self.title.pack(side="top", pady=10, anchor="n")
@@ -46,12 +49,15 @@ class moduleContainer(ttk.Frame):
         
         # Middle button that stays fixed in the center
         self.button_filesorter = ttk.Button(button_frame, text="Filesorter", command=start_filesorter)
-        self.button_filesorter.pack(side="left",expand=True, padx=80)
+        self.button_filesorter.pack(side="left",expand=True, padx=10)
         
         # Right button that expands
         self.button_calc = ttk.Button(button_frame, text="Calculator", command=start_calc)
         self.button_calc.pack(side="left", expand=True, padx=10)
 
+        self.button_pgen = ttk.Button(button_frame, text="Password Gen", command=start_pgen)
+        self.button_pgen.pack(side="left", expand=True, padx = 10)
+        
         # Make the entire frame expand to fill available space
         self.pack(fill="both", expand=True)
 
