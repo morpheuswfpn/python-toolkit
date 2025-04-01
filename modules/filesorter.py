@@ -3,7 +3,6 @@ from tkinter import ttk
 import sv_ttk
 import os
 from shutil import move
-
 import pywinstyles, sys
 from tkinter.font import nametofont
 
