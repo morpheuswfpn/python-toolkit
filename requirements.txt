@@ -1,2 +1,6 @@
+dark==0.7.1
+darkdetect==0.8.0
+detect==2020.12.3
 psutil==7.0.0
+pywinstyles==1.8
 sv-ttk==2.6.0

@@ -4,6 +4,7 @@ import sv_ttk
 import os
 from shutil import move
 import pywinstyles, sys
+from tkinter.font import nametofont
 
 programming = [
 	"py", "c", "pyc", "lua", "java", "asm", "go", "zig", 
@@ -39,36 +40,41 @@ file_types = {
 
 def GUI():
 	root = tk.Tk()
-	root.geometry("600x300")
-
+	root.geometry("500x250")
+	root.title("File Sorter")
 	source = tk.StringVar()
 	destination = tk.StringVar()
-
-	source_label = ttk.Label(root, text="Absolute Source Path")
-	source_label.pack()
-
+	root.iconbitmap("./Assets/file.ico")
+	source_label = ttk.Label(root, text="Absolute Source Path", font=("Segoe UI", 10))
+	source_label.pack(pady=5)
+	apply_theme_to_titlebar(root)
 	source_entry = ttk.Entry(root, textvariable=source)
-	source_entry.pack()
+	source_entry.pack(pady=5)
 
-	destination_label = ttk.Label(root, text="Absolute Destination Path")
-	destination_label.pack()
+	destination_label = ttk.Label(root, text="Absolute Destination Path", font=("Segoe UI", 10))
+	destination_label.pack(pady=5)
 
 	destination_entry = ttk.Entry(root, textvariable=destination)
-	destination_entry.pack()
+	destination_entry.pack(pady=5)
 
 	def on_submit():
 		root.quit()
-
 	submit_button = ttk.Button(root, text="Submit", command=on_submit)
-	submit_button.pack()
+	submit_button.pack(pady=15)
 
 	sv_ttk.set_theme("dark")
+	nametofont("SunValleyBodyFont").configure(size=10)
 	root.mainloop()
 
 	return source.get(), destination.get()
 
 def does_dir_exist(dir):
 	return os.path.isdir(dir)
+
+def apply_theme_to_titlebar(root):
+    version = sys.getwindowsversion()
+    if version.major == 10:
+        pywinstyles.change_header_color(root,"#1c1c1c")
 
 def main():
 	moved_count = 0
@@ -100,12 +106,7 @@ def main():
 
 	sv_ttk.set_theme("dark")
 	exit()
-	apply_theme_to_titlebar(root)
  
-def apply_theme_to_titlebar(root):
-    version = sys.getwindowsversion()
-    if version.major == 10:
-        pywinstyles.change_header_color(root,"#1c1c1c")
 
 
 
