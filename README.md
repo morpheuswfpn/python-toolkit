@@ -1,9 +1,12 @@
 # Info
-This is a small Python program or rather a set of programs written in python by me and MIBB as a school project.
+Simple GUI Program written by me and MIBB as part of a school project, it consists of the main GUI and what we call modules. These modules are other GUI programs that get launched from the main one.
 
-The Programm consists of a main GUI that can be viewed as kind of a launcher, this GUI contains launch buttons to then execute the modules which are also little GUI's located in `/modules`.
+Currently there are following modules:
+- Filesorter
+- Resource Monitor
+- Calculator
 
-(Am I autistic, This repo is literally private)
+The GUI's use the SunValley ttk theme.
 # Installation Linux
 On Linux distributions you will quite likely get the error message that packages should not be installed globally and that is where the virtual environment comes into play. Refer to [this](documentation/venv.md) guide and then do the normal installation.
 
