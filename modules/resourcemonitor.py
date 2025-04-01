@@ -96,8 +96,6 @@ bat_pct.grid(row=3, column=2, padx=10, pady=10, sticky="e")
 bat_state = ttk.Label(root, text="", font=nfont)
 bat_state.grid(row=3, column=3, padx=10, pady=10)
 
-##############################################################
-
 def main():
   sv_ttk.set_theme("dark")
   cpu_funcs()
