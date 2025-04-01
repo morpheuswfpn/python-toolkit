@@ -10,7 +10,6 @@ style = ttk.Style()
 root.geometry("510x150")
 root.tk.call("tk", "scaling", 1.0)
 root.title("Resource Monitor")
-root.iconbitmap("./Assets/analytics.ico")
 
 # cpu
 

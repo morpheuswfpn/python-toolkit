@@ -8,7 +8,6 @@ style = ttk.Style()
 root.geometry("440x640")
 root.tk.call("tk", "scaling", 1.0)
 root.title("Calculator")
-root.iconbitmap("./Assets/calculator.ico")
 root.resizable(False,False)
 sv_ttk.set_theme("dark")
 
