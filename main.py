@@ -62,7 +62,7 @@ class moduleContainer(ttk.Frame):
         self.pack(fill="both", expand=True)
 
         # Center the middle button with "place" geometry manager
-        button_frame.place(relx=0.45, rely=0.3, anchor="n")
+        button_frame.place(relx=0.5, rely=0.3, anchor="n")
         
 if __name__ == "__main__":
     app = App()
