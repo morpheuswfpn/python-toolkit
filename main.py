@@ -3,11 +3,11 @@ from tkinter import ttk
 import sv_ttk
 import subprocess
 
-TOOLKITVERSION = "v.0.8"
+TOOLKITVERSION = "v.0.9"
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Toolkit "+TOOLKITVERSION)
+        self.title("Toolkit Lauchner "+TOOLKITVERSION)
         self.geometry("1280x720")
         self.resizable(False, False)
         
@@ -16,7 +16,7 @@ class moduleContainer(ttk.Frame):
         super().__init__(container)
     
         def start_rmonitor():
-            subprocess.Popen(["python", "./modules/rmonitor.py"])
+            subprocess.Popen(["python", "./modules/resourcemonitor.py"])
         self.button = ttk.Button(self, text="Resource Monitor", command=start_rmonitor)
         self.button.pack()
 
@@ -25,7 +25,10 @@ class moduleContainer(ttk.Frame):
         self.button = ttk.Button(self, text="Filesorter", command=start_filesorter)
         self.button.pack()
 
-
+        def start_calc():
+            subprocess.Popen(["python", ".modules/calc.py"])
+        self.button = ttk.Button(self, text="Calculator", command=start_calc)
+        self.button.pack
         
         self.title = ttk.Label(self, text="Dashboard", font=("Segoe UI",40))
         self.title.pack()  

@@ -1,8 +1,9 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk
 import sv_ttk
 import os
 from shutil import move
+import pywinstyles, sys
 
 programming = [
 	"py", "c", "pyc", "lua", "java", "asm", "go", "zig", 
@@ -99,7 +100,14 @@ def main():
 
 	sv_ttk.set_theme("dark")
 	exit()
+	apply_theme_to_titlebar(root)
+ 
+def apply_theme_to_titlebar(root):
+    version = sys.getwindowsversion()
+    if version.major == 10:
+        pywinstyles.change_header_color(root,"#1c1c1c")
+
+
 
 if __name__ == "__main__":
 	main()
-
