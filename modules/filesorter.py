@@ -3,6 +3,7 @@ from tkinter import ttk
 import sv_ttk
 import os
 from shutil import move
+
 import pywinstyles, sys
 from tkinter.font import nametofont
 
@@ -104,11 +105,7 @@ def main():
 				move(file, os.path.join(file_class_dir, file))
 				moved_count += 1
 
-	sv_ttk.set_theme("dark")
 	exit()
- 
-
-
 
 if __name__ == "__main__":
 	main()
